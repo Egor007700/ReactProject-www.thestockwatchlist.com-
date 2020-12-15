@@ -1,0 +1,99 @@
+main {
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  /* Main container - set the width of the element; */
+  .container {
+    position: relative;
+    /*width: 230px;*/
+  }
+  
+  /* Stretch the select to overlay the component and hide it */
+  .select-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+  }
+  
+  /* 
+    The label containing all our custom components 
+    Style however you want
+  */
+  .custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-color: #3c5e98;
+    padding-left: 0px;
+    font-family: Roboto-Regular;
+    font-size: 11.38pt;
+    padding-right: 0px;
+    color: #3c5e98;
+    
+  }
+  .custom strong {
+    color: darkcyan;
+    font-size: 0.93rem;
+    font-weight: 700;
+  }
+  
+
+  /* 
+    Add spacing between all of the children 
+    If you don't know how this works, check out the lobotomized owl selector:
+    https://pineco.de/get-to-know-the-lobotomized-owl-selector/
+  */
+  .custom * + * {
+    margin-left: 7px;
+  }
+  
+  .panel-container {
+    flex: 1;
+    display: flex;
+    min-height: 300px;
+  }
+  
+  .panel {
+    background: white;
+    border: 1px solid gray;
+    padding: 15px;
+  }
+  .panel:first-child {
+  
+  }
+  
+  .resizer {
+    width: 8px;
+    background: darkGray;
+    position: relative;
+    cursor: col-resize;
+    flex-shrink: 0;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */ 
+  }
+  
+  .resizer::after,
+  .resizer::before {
+    content: "";
+    border-left: 1px solid #333;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    right: 0;
+    display: inline-block;
+    height: 20px;
+    margin: 0 2px;
+  }
+  .resizer::before {
+    left: 0;
+  }
